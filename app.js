@@ -1,4 +1,4 @@
-/* Nadan POS — offline shop sales & expense tracker. Data stays in localStorage. */
+/* Nadan POS â offline shop sales & expense tracker. Data stays in localStorage. */
 (function () {
   "use strict";
 
@@ -28,7 +28,7 @@
   }
   function todayKey() { return dayKey(new Date()); }
   function fmt(n) {
-    return "₹" + Number(n || 0).toLocaleString("en-IN", { maximumFractionDigits: 2 });
+    return "â¹" + Number(n || 0).toLocaleString("en-IN", { maximumFractionDigits: 2 });
   }
   function prettyDate(key) {
     var d = new Date(key + "T00:00:00");
@@ -65,8 +65,8 @@
     var t = totalsFor(todayKey());
     var pct = Math.min(100, Math.round((t.sales / state.target) * 100));
     bar.style.width = pct + "%";
-    txt.textContent = fmt(t.sales) + " of " + fmt(state.target) + " — " + pct + "% reached" +
-      (t.sales >= state.target ? " · target hit!" : "");
+    txt.textContent = fmt(t.sales) + " of " + fmt(state.target) + " â " + pct + "% reached" +
+      (t.sales >= state.target ? " Â· target hit!" : "");
   }
 
   function renderChips() {
@@ -139,7 +139,7 @@
     var wrap = $("kd-history");
     wrap.innerHTML = "";
     if (!state.entries.length) {
-      wrap.innerHTML = '<p class="kd-empty">No entries yet — add your first sale above.</p>';
+      wrap.innerHTML = '<p class="kd-empty">No entries yet â add your first sale above.</p>';
       return;
     }
     var byDay = {};
@@ -151,7 +151,7 @@
       g.className = "kd-daygroup";
       var t = totalsFor(key);
       var h = document.createElement("h3");
-      h.textContent = prettyDate(key) + " — " + fmt(t.sales) + " sales · " + fmt(t.exp) + " expenses";
+      h.textContent = prettyDate(key) + " â " + fmt(t.sales) + " sales Â· " + fmt(t.exp) + " expenses";
       g.appendChild(h);
       byDay[key].slice().reverse().forEach(function (en) {
         var row = document.createElement("div");
@@ -163,9 +163,9 @@
         var amt = document.createElement("span");
         amt.className = "kd-eamt";
         amt.style.color = en.type === "sale" ? "#22c55e" : "#f43f5e";
-        amt.textContent = (en.type === "sale" ? "+" : "−") + fmt(en.amount);
+        amt.textContent = (en.type === "sale" ? "+" : "â") + fmt(en.amount);
         var del = document.createElement("button");
-        del.className = "kd-edel"; del.textContent = "×"; del.title = "delete";
+        del.className = "kd-edel"; del.textContent = "Ã"; del.title = "delete";
         del.addEventListener("click", function () {
           state.entries = state.entries.filter(function (x) { return x.id !== en.id; });
           save(); renderAll();
@@ -181,20 +181,20 @@
     var key = todayKey();
     var t = totalsFor(key);
     var lines = [];
-    lines.push("Nadan POS Report — " + prettyDate(key));
+    lines.push("Nadan POS Report â " + prettyDate(key));
     lines.push("Sales: " + fmt(t.sales) + " (" + t.count + " entries)");
     lines.push("Expenses: " + fmt(t.exp));
     lines.push("Net: " + fmt(t.sales - t.exp));
     if (state.target) {
       var pct = Math.round((t.sales / state.target) * 100);
-      lines.push("Target: " + fmt(state.target) + " — " + pct + "% reached");
+      lines.push("Target: " + fmt(state.target) + " â " + pct + "% reached");
     }
     var byCat = {};
     state.entries.forEach(function (en) {
       if (en.d === key && en.type === "sale") byCat[en.cat] = (byCat[en.cat] || 0) + en.amount;
     });
     var parts = Object.keys(byCat).map(function (c) { return c + " " + fmt(byCat[c]); });
-    if (parts.length) lines.push("Split: " + parts.join(" · "));
+    if (parts.length) lines.push("Split: " + parts.join(" Â· "));
     return lines.join("\n");
   }
 
@@ -338,7 +338,7 @@
 
       var amt = document.createElement("input");
       amt.type = "number"; amt.min = "0"; amt.step = "0.01"; amt.inputMode = "decimal";
-      amt.placeholder = "Amount ₹ (incl. 18% GST)";
+      amt.placeholder = "Amount â¹ (incl. 18% GST)";
       amt.value = it.amt;
       amt.addEventListener("input", function () { it.amt = amt.value; saveQuote(); renderQuoteTotal(); });
       row.appendChild(amt);
@@ -384,7 +384,7 @@
     if (!quote.staff) { btn.textContent = "Enter staff name first"; setTimeout(function () { btn.textContent = "Download quotation PDF"; }, 1600); return; }
     if (!validItems.length) { btn.textContent = "Add an item amount first"; setTimeout(function () { btn.textContent = "Download quotation PDF"; }, 1600); return; }
     if (!window.pdfMake || !window.pdfMake.createPdf) {
-      btn.textContent = "PDF needs internet once — reload online";
+      btn.textContent = "PDF needs internet once â reload online";
       setTimeout(function () { btn.textContent = "Download quotation PDF"; }, 1800);
       return;
     }
@@ -398,7 +398,7 @@
     ]];
     validItems.forEach(function (it, i) {
       body.push([
-        String(i + 1), it.cat, it.model || "—",
+        String(i + 1), it.cat, it.model || "â",
         { text: fmt(parseFloat(it.amt)), alignment: "right" }
       ]);
     });
@@ -494,6 +494,13 @@
   renderAll();
 
   if ("serviceWorker" in navigator) {
+    var kdSwReloading = false;
+    navigator.serviceWorker.addEventListener("controllerchange", function () {
+      if (kdSwReloading) return;
+      kdSwReloading = true;
+      location.reload();
+    });
     navigator.serviceWorker.register("sw.js").catch(function () {});
   }
 })();
+ 
