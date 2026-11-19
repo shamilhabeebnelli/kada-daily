@@ -1,9 +1,10 @@
-# Kada Daily
+# Nadan POS
 
-Offline-first daily shop sales and expense tracker. No account, no server —
-everything stays in the browser's localStorage on the device.
+Offline-first shop sales and expense tracker with GST-inclusive quotations.
+No account, no server: everything stays in the browser's localStorage on the device.
 
-**Live:** https://shamilhabeebnelli.github.io/kada-daily/
+**Live:** https://pos.denelli.in/
+Mirror: https://shamilhabeebnelli.github.io/nadan-pos/
 
 ## Features
 
@@ -13,11 +14,13 @@ everything stays in the browser's localStorage on the device.
 - 7-day sales vs expenses bar chart
 - Full history grouped by day, with delete
 - One-tap report text (WhatsApp-ready) and CSV export
+- Quotation maker: staff and customer details, item rows with category and model, live 18% GST split, PDF download. Marked clearly as a quotation, not a tax invoice.
 - Installable PWA, works fully offline after first load
 
 ## Tech
 
-Plain HTML/CSS/JS, no dependencies. Deployed to GitHub Pages by a GitHub
-Actions workflow on every push.
+Plain HTML/CSS/JS, no dependencies. Quotation PDFs use pdfMake from a CDN,
+so the first PDF download needs internet. Deployed to GitHub Pages by a
+GitHub Actions workflow on every push.
 
-© 2026 denelli · copyright strictly prohibited
+Â© 2026 denelli Â· copyright strictly prohibited
