@@ -24,5 +24,4 @@ Plain HTML/CSS/JS, no dependencies. Quotation PDFs use pdfMake from a CDN,
 so the first PDF download needs internet. Deployed to GitHub Pages by a
 GitHub Actions workflow on every push.
 
-Â© 2026 denelli Â· copyright strictly prohibited
- 
+© 2026 denelli · copyright strictly prohibited
