@@ -1,0 +1,138 @@
+:root {
+  --kd-bg: #0b0e14;
+  --kd-card: #121826;
+  --kd-line: #1f2a3d;
+  --kd-text: #e8edf6;
+  --kd-dim: #93a1b8;
+  --kd-a: #7c3aed;
+  --kd-b: #06b6d4;
+  --kd-green: #22c55e;
+  --kd-red: #f43f5e;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--kd-bg); color: var(--kd-text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif; line-height: 1.5;
+}
+.kd-top {
+  background: linear-gradient(120deg, rgba(124,58,237,.25), rgba(6,182,212,.18));
+  border-bottom: 1px solid var(--kd-line); padding: 20px 16px;
+}
+.kd-topin { max-width: 720px; margin: 0 auto; display: flex; align-items: center; gap: 14px; }
+.kd-logo {
+  width: 48px; height: 48px; border-radius: 13px; flex: none;
+  background: linear-gradient(135deg, var(--kd-a), var(--kd-b));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; font-weight: 800; color: #fff;
+  box-shadow: 0 6px 22px rgba(124,58,237,.45);
+}
+.kd-logosm { width: 30px; height: 30px; font-size: 17px; border-radius: 8px; }
+.kd-title { font-size: 24px; }
+.kd-sub { color: var(--kd-dim); font-size: 13.5px; }
+
+.kd-main { max-width: 720px; margin: 20px auto; padding: 0 16px; display: grid; gap: 16px; }
+.kd-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.kd-stat {
+  background: var(--kd-card); border: 1px solid var(--kd-line); border-radius: 14px;
+  padding: 12px; display: flex; flex-direction: column; gap: 4px;
+  animation: kdup .45s ease both;
+}
+.kd-statlbl { font-size: 11.5px; color: var(--kd-dim); text-transform: uppercase; letter-spacing: .6px; }
+.kd-statval { font-size: 19px; font-weight: 700; }
+.kd-green { color: var(--kd-green); }
+.kd-red { color: var(--kd-red); }
+
+.kd-card {
+  background: var(--kd-card); border: 1px solid var(--kd-line); border-radius: 16px;
+  padding: 18px; animation: kdup .45s ease both;
+}
+.kd-card h2 { font-size: 17px; margin-bottom: 12px; }
+.kd-cardhead { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+@keyframes kdup { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+.kd-targetset { display: flex; gap: 8px; }
+.kd-targetset input { width: 120px; }
+input {
+  background: #0d1320; border: 1px solid var(--kd-line); color: var(--kd-text);
+  border-radius: 10px; padding: 10px 12px; font-size: 15px; outline: none; width: 100%;
+}
+input:focus { border-color: var(--kd-b); }
+.kd-barwrap {
+  height: 12px; border-radius: 999px; background: #0d1320;
+  border: 1px solid var(--kd-line); overflow: hidden; margin-top: 12px;
+}
+.kd-bar {
+  height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--kd-a), var(--kd-b));
+  border-radius: 999px; transition: width .5s ease;
+}
+.kd-bartext { color: var(--kd-dim); font-size: 13px; margin-top: 8px; }
+
+.kd-seg { display: flex; gap: 8px; margin-bottom: 12px; }
+.kd-segbtn {
+  flex: 1; padding: 10px; border-radius: 10px; border: 1px solid var(--kd-line);
+  background: #0d1320; color: var(--kd-dim); font-size: 15px; font-weight: 600; cursor: pointer;
+  transition: all .15s ease;
+}
+.kd-segbtn.kd-active[data-kdtype="sale"] { background: rgba(34,197,94,.16); color: var(--kd-green); border-color: var(--kd-green); }
+.kd-segbtn.kd-active[data-kdtype="expense"] { background: rgba(244,63,94,.14); color: var(--kd-red); border-color: var(--kd-red); }
+.kd-formrow { margin-bottom: 12px; }
+.kd-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.kd-chip {
+  padding: 7px 14px; border-radius: 999px; font-size: 13.5px; cursor: pointer;
+  background: #0d1320; border: 1px solid var(--kd-line); color: var(--kd-dim);
+  transition: all .15s ease;
+}
+.kd-chip.kd-active { background: rgba(6,182,212,.16); color: var(--kd-b); border-color: var(--kd-b); }
+
+.kd-btn {
+  background: linear-gradient(135deg, var(--kd-a), var(--kd-b));
+  color: #fff; border: none; border-radius: 10px;
+  font-size: 14px; font-weight: 700; padding: 10px 20px; cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.kd-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(6,182,212,.35); }
+.kd-big { width: 100%; padding: 13px; font-size: 16px; }
+.kd-ghost { background: #0d1320; border: 1px solid var(--kd-line); color: var(--kd-dim); }
+
+#kd-chart { width: 100%; }
+.kd-legend { display: flex; gap: 18px; margin-top: 8px; color: var(--kd-dim); font-size: 13px; }
+.kd-key { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; }
+.kd-keygreen { background: var(--kd-green); }
+.kd-keyred { background: var(--kd-red); }
+
+.kd-history { display: grid; gap: 14px; }
+.kd-daygroup h3 { font-size: 13.5px; color: var(--kd-dim); margin-bottom: 6px; font-weight: 600; }
+.kd-entry {
+  display: flex; align-items: center; gap: 10px;
+  background: #0d1320; border: 1px solid var(--kd-line); border-radius: 10px;
+  padding: 9px 12px; margin-bottom: 6px; font-size: 14px;
+}
+.kd-entry .kd-ecat {
+  font-size: 11.5px; padding: 2px 9px; border-radius: 999px;
+  background: rgba(124,58,237,.16); color: #c4b5fd; flex: none;
+}
+.kd-entry .kd-enote { color: var(--kd-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+.kd-entry .kd-eamt { font-weight: 700; flex: none; }
+.kd-entry .kd-edel {
+  background: none; border: none; color: var(--kd-dim); cursor: pointer;
+  font-size: 16px; padding: 2px 6px; flex: none;
+}
+.kd-entry .kd-edel:hover { color: var(--kd-red); }
+.kd-empty { color: var(--kd-dim); font-size: 14px; text-align: center; padding: 10px 0; }
+
+.kd-report {
+  background: #0d1320; border: 1px solid var(--kd-line); border-radius: 10px;
+  padding: 14px; font-size: 13.5px; white-space: pre-wrap; color: #b7c6de;
+  font-family: "Cascadia Code", Consolas, monospace; margin-bottom: 12px;
+}
+.kd-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.kd-foot {
+  border-top: 1px solid var(--kd-line); margin-top: 18px; padding: 18px 16px;
+  display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;
+  color: var(--kd-dim); font-size: 12.5px; text-align: center;
+}
+@media (max-width: 560px) {
+  .kd-grid { grid-template-columns: repeat(2, 1fr); }
+}
