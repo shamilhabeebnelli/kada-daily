@@ -1,5 +1,7 @@
 # Nadan POS
 
+<p><a href="https://pos.denelli.in/"><img src="logo.svg" width="96" alt="Nadan POS logo"></a></p>
+
 Offline-first shop sales and expense tracker with GST-inclusive quotations.
 No account, no server: everything stays in the browser's localStorage on the device.
 
