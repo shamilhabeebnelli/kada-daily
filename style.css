@@ -161,3 +161,10 @@ textarea { resize: vertical; }
 }
 .kd-q-total { color: var(--kd-green); font-size: 20px; }
 .kd-q-gstpart { color: var(--kd-dim); font-size: 12.5px; margin-bottom: 14px; }
+
+/* section tabs */
+.kd-tabs { max-width: 720px; margin: 14px auto 0; padding: 0 16px; display: flex; gap: 10px; }
+.kd-tab { flex: 1; padding: 11px 0; border-radius: 12px; border: 1px solid var(--kd-line); background: var(--kd-card); color: var(--kd-dim); font: inherit; font-weight: 700; font-size: 15px; cursor: pointer; }
+.kd-tab.kd-tabactive { background: linear-gradient(120deg, var(--kd-a), var(--kd-b)); color: #fff; border-color: transparent; }
+.kd-tabpane { display: grid; gap: 16px; }
+.kd-tabpane[hidden] { display: none; }
