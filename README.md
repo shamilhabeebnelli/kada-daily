@@ -4,7 +4,6 @@ Offline-first shop sales and expense tracker with GST-inclusive quotations.
 No account, no server: everything stays in the browser's localStorage on the device.
 
 **Live:** https://pos.denelli.in/
-Mirror: https://shamilhabeebnelli.github.io/nadan-pos/
 
 ## Features
 
