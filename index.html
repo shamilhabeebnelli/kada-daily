@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kada Daily — shop sales tracker</title>
+<meta name="description" content="Track daily shop sales and expenses, targets, 7-day chart, WhatsApp-ready report. Works offline.">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0b0e14">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="kd-top">
+  <div class="kd-topin">
+    <div class="kd-logo">N</div>
+    <div>
+      <h1 class="kd-title">Kada Daily</h1>
+      <p class="kd-sub" id="kd-date">&mdash;</p>
+    </div>
+  </div>
+</header>
+
+<main class="kd-main">
+
+  <section class="kd-grid">
+    <div class="kd-stat"><span class="kd-statlbl">Sales today</span><span class="kd-statval kd-green" id="kd-sales">₹0</span></div>
+    <div class="kd-stat"><span class="kd-statlbl">Expenses</span><span class="kd-statval kd-red" id="kd-exp">₹0</span></div>
+    <div class="kd-stat"><span class="kd-statlbl">Net</span><span class="kd-statval" id="kd-net">₹0</span></div>
+    <div class="kd-stat"><span class="kd-statlbl">Entries</span><span class="kd-statval" id="kd-count">0</span></div>
+  </section>
+
+  <section class="kd-card" id="kd-targetcard">
+    <div class="kd-cardhead">
+      <h2>Daily target</h2>
+      <div class="kd-targetset">
+        <input id="kd-targetin" type="number" min="0" step="500" placeholder="₹ target">
+        <button class="kd-btn" id="kd-targetsave">set</button>
+      </div>
+    </div>
+    <div class="kd-barwrap"><div class="kd-bar" id="kd-bar"></div></div>
+    <p class="kd-bartext" id="kd-bartext">No target set</p>
+  </section>
+
+  <section class="kd-card">
+    <h2>Add entry</h2>
+    <div class="kd-seg" id="kd-seg">
+      <button class="kd-segbtn kd-active" data-kdtype="sale">Sale</button>
+      <button class="kd-segbtn" data-kdtype="expense">Expense</button>
+    </div>
+    <div class="kd-formrow">
+      <input id="kd-amt" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Amount ₹">
+    </div>
+    <div class="kd-chips" id="kd-chips"></div>
+    <div class="kd-formrow">
+      <input id="kd-note" type="text" maxlength="60" placeholder="Note (customer, bill no, item…)">
+    </div>
+    <button class="kd-btn kd-big" id="kd-add">Add</button>
+  </section>
+
+  <section class="kd-card">
+    <h2>Last 7 days</h2>
+    <canvas id="kd-chart" height="170"></canvas>
+    <div class="kd-legend">
+      <span><i class="kd-key kd-keygreen"></i>sales</span>
+      <span><i class="kd-key kd-keyred"></i>expenses</span>
+    </div>
+  </section>
+
+  <section class="kd-card">
+    <h2>History</h2>
+    <div id="kd-history" class="kd-history"></div>
+  </section>
+
+  <section class="kd-card">
+    <h2>Share report</h2>
+    <pre class="kd-report" id="kd-report"></pre>
+    <div class="kd-actions">
+      <button class="kd-btn" id="kd-copy">Copy report</button>
+      <button class="kd-btn kd-ghost" id="kd-csv">Download CSV</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="kd-foot">
+  <div class="kd-logo kd-logosm">N</div>
+  <p>Kada Daily &middot; data stays on this device &middot; &copy; 2026 denelli &middot; copyright strictly prohibited</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
