@@ -1,5 +1,5 @@
-/* Kada Daily service worker: cache-first app shell for offline use. */
-var CACHE = "kada-daily-v1";
+/* Nadan POS service worker: cache-first app shell for offline use. */
+var CACHE = "nadan-pos-v2";
 var ASSETS = ["./", "./index.html", "./style.css", "./app.js", "./manifest.webmanifest", "./icon.svg"];
 
 self.addEventListener("install", function (e) {
