@@ -1,6 +1,6 @@
 /* Nadan POS service worker: cache-first app shell for offline use. */
-var CACHE = "nadan-pos-v2";
-var ASSETS = ["./", "./index.html", "./style.css", "./app.js", "./manifest.webmanifest", "./icon.svg"];
+var CACHE = "nadan-pos-v3";
+var ASSETS = ["./", "./index.html", "./style.css?v=2", "./app.js?v=2", "./manifest.webmanifest", "./icon.svg"];
 
 self.addEventListener("install", function (e) {
   e.waitUntil(
