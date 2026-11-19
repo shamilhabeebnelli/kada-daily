@@ -1,0 +1,13 @@
+{
+  "name": "Kada Daily",
+  "short_name": "Kada Daily",
+  "description": "Daily shop sales and expense tracker with targets, charts and WhatsApp-ready reports.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b0e14",
+  "theme_color": "#0b0e14",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
