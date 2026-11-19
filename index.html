@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nadan POS — shop sales tracker</title>
+<title>Nadan POS â shop sales tracker</title>
 <meta name="description" content="Track daily shop sales and expenses, targets, 7-day chart, WhatsApp-ready report. Works offline.">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0b0e14">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="apple-touch-icon" href="icon.svg">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <header class="kd-top">
@@ -25,9 +25,9 @@
 <main class="kd-main">
 
   <section class="kd-grid">
-    <div class="kd-stat"><span class="kd-statlbl">Sales today</span><span class="kd-statval kd-green" id="kd-sales">₹0</span></div>
-    <div class="kd-stat"><span class="kd-statlbl">Expenses</span><span class="kd-statval kd-red" id="kd-exp">₹0</span></div>
-    <div class="kd-stat"><span class="kd-statlbl">Net</span><span class="kd-statval" id="kd-net">₹0</span></div>
+    <div class="kd-stat"><span class="kd-statlbl">Sales today</span><span class="kd-statval kd-green" id="kd-sales">â¹0</span></div>
+    <div class="kd-stat"><span class="kd-statlbl">Expenses</span><span class="kd-statval kd-red" id="kd-exp">â¹0</span></div>
+    <div class="kd-stat"><span class="kd-statlbl">Net</span><span class="kd-statval" id="kd-net">â¹0</span></div>
     <div class="kd-stat"><span class="kd-statlbl">Entries</span><span class="kd-statval" id="kd-count">0</span></div>
   </section>
 
@@ -35,7 +35,7 @@
     <div class="kd-cardhead">
       <h2>Daily target</h2>
       <div class="kd-targetset">
-        <input id="kd-targetin" type="number" min="0" step="500" placeholder="₹ target">
+        <input id="kd-targetin" type="number" min="0" step="500" placeholder="â¹ target">
         <button class="kd-btn" id="kd-targetsave">set</button>
       </div>
     </div>
@@ -50,11 +50,11 @@
       <button class="kd-segbtn" data-kdtype="expense">Expense</button>
     </div>
     <div class="kd-formrow">
-      <input id="kd-amt" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Amount ₹">
+      <input id="kd-amt" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Amount â¹">
     </div>
     <div class="kd-chips" id="kd-chips"></div>
     <div class="kd-formrow">
-      <input id="kd-note" type="text" maxlength="60" placeholder="Note (customer, bill no, item…)">
+      <input id="kd-note" type="text" maxlength="60" placeholder="Note (customer, bill no, itemâ¦)">
     </div>
     <button class="kd-btn kd-big" id="kd-add">Add</button>
   </section>
@@ -85,7 +85,7 @@
     <div id="kd-q-items"></div>
     <button class="kd-btn kd-ghost kd-q-addrowbtn" id="kd-q-addrow">+ Add item</button>
     <div class="kd-q-totalrow">
-      <span>Total (incl. 18% GST)</span><span class="kd-q-total" id="kd-q-total">₹0</span>
+      <span>Total (incl. 18% GST)</span><span class="kd-q-total" id="kd-q-total">â¹0</span>
     </div>
     <p class="kd-q-gstpart" id="kd-q-gstpart">Amounts entered are treated as GST-inclusive; no extra 18% is added.</p>
     <button class="kd-btn kd-big" id="kd-q-pdf">Download quotation PDF</button>
@@ -109,6 +109,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
-<script src="app.js?v=2"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>
+ 
