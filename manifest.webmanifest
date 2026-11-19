@@ -1,6 +1,6 @@
 {
-  "name": "Kada Daily",
-  "short_name": "Kada Daily",
+  "name": "Nadan POS",
+  "short_name": "Nadan POS",
   "description": "Daily shop sales and expense tracker with targets, charts and WhatsApp-ready reports.",
   "start_url": "./",
   "scope": "./",
