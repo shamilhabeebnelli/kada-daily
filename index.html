@@ -73,6 +73,24 @@
     <div id="kd-history" class="kd-history"></div>
   </section>
 
+
+  <section class="kd-card" id="kd-quotecard">
+    <h2>Quotation</h2>
+    <div class="kd-formrow"><input id="kd-q-staff" type="text" maxlength="60" placeholder="Staff name" autocomplete="name"></div>
+    <div class="kd-formrow"><input id="kd-q-staffphone" type="tel" maxlength="15" placeholder="Staff phone"></div>
+    <div class="kd-formrow"><input id="kd-q-cust" type="text" maxlength="60" placeholder="Customer name"></div>
+    <div class="kd-formrow"><input id="kd-q-custphone" type="tel" maxlength="15" placeholder="Customer phone"></div>
+    <div class="kd-formrow"><input id="kd-q-gstin" type="text" maxlength="15" placeholder="Customer GSTIN (optional)"></div>
+    <div class="kd-formrow"><textarea id="kd-q-addr" rows="2" maxlength="200" placeholder="Customer address (optional)"></textarea></div>
+    <div id="kd-q-items"></div>
+    <button class="kd-btn kd-ghost kd-q-addrowbtn" id="kd-q-addrow">+ Add item</button>
+    <div class="kd-q-totalrow">
+      <span>Total (incl. 18% GST)</span><span class="kd-q-total" id="kd-q-total">₹0</span>
+    </div>
+    <p class="kd-q-gstpart" id="kd-q-gstpart">Amounts entered are treated as GST-inclusive; no extra 18% is added.</p>
+    <button class="kd-btn kd-big" id="kd-q-pdf">Download quotation PDF</button>
+  </section>
+
   <section class="kd-card">
     <h2>Share report</h2>
     <pre class="kd-report" id="kd-report"></pre>
@@ -89,6 +107,8 @@
   <p>Nadan POS &middot; data stays on this device &middot; &copy; 2026 denelli &middot; copyright strictly prohibited</p>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
