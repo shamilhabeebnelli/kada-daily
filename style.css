@@ -168,3 +168,7 @@ textarea { resize: vertical; }
 .kd-tab.kd-tabactive { background: linear-gradient(120deg, var(--kd-a), var(--kd-b)); color: #fff; border-color: transparent; }
 .kd-tabpane { display: grid; gap: 16px; }
 .kd-tabpane[hidden] { display: none; }
+
+/* header/footer logo image (receipt mark) */
+img.kd-logo { background: none; display: block; object-fit: cover; border-radius: 11px; }
+img.kd-logosm { border-radius: 7px; }
