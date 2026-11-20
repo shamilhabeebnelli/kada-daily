@@ -1,10 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#7c3aed"/>
-      <stop offset="1" stop-color="#06b6d4"/>
+    <linearGradient id="np-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22c55e"/>
+      <stop offset="1" stop-color="#0d9488"/>
     </linearGradient>
   </defs>
-  <rect width="512" height="512" rx="112" fill="url(#g)"/>
-  <text x="256" y="352" font-family="Arial, sans-serif" font-size="300" font-weight="bold" fill="#ffffff" text-anchor="middle">N</text>
+  <rect x="4" y="4" width="88" height="88" rx="20" fill="url(#np-bg)"/>
+  <!-- receipt with serrated bottom -->
+  <path d="M30 18 h36 v52 l-4.5 4 -4.5 -4 -4.5 4 -4.5 -4 -4.5 4 -4.5 -4 -4.5 4 -4.5 -4 -4.5 4 z"
+        fill="#ffffff"/>
+  <!-- N on receipt -->
+  <text x="48" y="42" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800" fill="#0d9488" text-anchor="middle">N</text>
+  <!-- receipt lines -->
+  <g stroke="#94a3b8" stroke-width="3" stroke-linecap="round">
+    <line x1="37" y1="52" x2="59" y2="52"/>
+    <line x1="37" y1="60" x2="54" y2="60"/>
+  </g>
+  <!-- rupee coin accent -->
+  <circle cx="66" cy="30" r="10" fill="#fbbf24"/>
+  <text x="66" y="35" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800" fill="#78350f" text-anchor="middle">&#8377;</text>
 </svg>
