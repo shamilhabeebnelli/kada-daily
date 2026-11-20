@@ -1,6 +1,6 @@
 /* Nadan POS service worker: offline shell with fast, self-healing updates. */
-var CACHE = "nadan-pos-v4";
-var ASSETS = ["./", "./index.html", "./style.css?v=3", "./app.js?v=3", "./manifest.webmanifest", "./icon.svg"];
+var CACHE = "nadan-pos-v5";
+var ASSETS = ["./", "./index.html", "./style.css?v=5", "./app.js?v=4", "./manifest.webmanifest", "./icon.svg?v=2"];
 
 self.addEventListener("install", function (e) {
   e.waitUntil(
